@@ -156,7 +156,7 @@ def get_coverage_info(config: Config) -> dict:
 
 
 def get_diff_coverage_info(config: Config) -> dict:
-    print(f"Testing")
+    print(f"Testing2")
     call("git", "fetch", "--depth=1000")
     with tempfile.NamedTemporaryFile("r") as f:
         call(
@@ -165,7 +165,7 @@ def get_diff_coverage_info(config: Config) -> dict:
             f"--json-report={f.name}",
             "--diff-range-notation=..",
             "--quiet",
-            *config.DIFF_COVER_ARGS,
+            config.DIFF_COVER_ARGS,
         )
         return json.loads(f.read())
 
