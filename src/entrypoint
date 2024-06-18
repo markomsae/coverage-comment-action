@@ -156,9 +156,14 @@ def get_coverage_info(config: Config) -> dict:
 
 
 def get_diff_coverage_info(config: Config) -> dict:
-    print(f"Testing5")
+    print(f"Testing6")
     print(config.COVERAGE_FILE)
     print(*config.DIFF_COVER_ARGS)
+    os.system('git checkout master')
+    os.system('cat cobertura.xml')
+    os.system('git checkout origin/feature/something5')
+    os.system('diff-cover cobertura.xml')
+
     with tempfile.NamedTemporaryFile("r") as f:
         call(
             "diff-cover",
