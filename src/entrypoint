@@ -162,7 +162,8 @@ def get_diff_coverage_info(config: Config) -> dict:
     os.system('git checkout master')
     os.system('cat cobertura.xml')
     os.system('git checkout origin/feature/something5')
-    os.system('diff-cover cobertura.xml')
+    os.system('diff-cover cobertura.xml --compare-branch master')
+
 
     with tempfile.NamedTemporaryFile("r") as f:
         call(
