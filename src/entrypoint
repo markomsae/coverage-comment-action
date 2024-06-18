@@ -161,7 +161,7 @@ def get_diff_coverage_info(config: Config) -> dict:
     print(*config.DIFF_COVER_ARGS)
     os.system('git checkout master')
     os.system('cat cobertura.xml')
-    os.system('git checkout origin/feature/something5')
+    os.system('git checkout ' + config.BRANCH_NAME)
     os.system('diff-cover cobertura.xml --compare-branch master')
 
 
