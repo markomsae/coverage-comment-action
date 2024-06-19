@@ -161,8 +161,8 @@ def get_diff_coverage_info(config: Config) -> dict:
     print(*config.DIFF_COVER_ARGS)
     os.system('git branch')
     os.system('git log -n 1')
-    os.system('git log -n 1 tempmaster')
-    os.system('diff-cover cobertura.xml --compare-branch tempmaster')
+    os.system('git log -n 1 origin/tempmaster')
+    os.system('diff-cover cobertura.xml --compare-branch origin/tempmaster')
 
 
     with tempfile.NamedTemporaryFile("r") as f:
