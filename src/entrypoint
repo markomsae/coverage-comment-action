@@ -156,9 +156,10 @@ def get_coverage_info(config: Config) -> dict:
 
 
 def get_diff_coverage_info(config: Config) -> dict:
-    print(f"Testing6")
+    print(f"Testing7")
     print(config.COVERAGE_FILE)
     print(*config.DIFF_COVER_ARGS)
+    os.system('git branch')
     os.system('diff-cover cobertura.xml --compare-branch master')
 
 
